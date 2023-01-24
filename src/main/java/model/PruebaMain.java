@@ -2,15 +2,13 @@ package model;
 
 public class PruebaMain {
     public static void main(String[] args) {
-//        Coordinate c1 = new Coordinate('G',1);
-//        Board tablero = new Board();
-//        Cell celda = new Cell(tablero,c1);
-//        Piece caballoBlanco = new Piece(Piece.Type.WHITE_KNIGHT,celda);
-//        System.out.println(caballoBlanco);
-//        Piece caballoNegro = new Piece(Piece.Type.BLACK_KNIGHT,celda);
-//        System.out.println(caballoNegro);
-        Board board = new Board();
+        Board b1 = new Board();
 
-        System.out.print(board);
+        b1.placePieces();
+        System.out.print(b1);
+
+        Coordinate[] coordinates = b1.getCell(new Coordinate('C',8)).getPiece().getNextMovements();
+        b1.highlight(coordinates);
+        System.out.println(b1);
     }
 }

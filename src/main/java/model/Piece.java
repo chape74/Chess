@@ -14,6 +14,25 @@ public abstract class Piece {
         this.type = type;
     }
 
+
+
+    public Type getType() {
+        return type;
+    }
+
+    public Cell getCell() {
+        return cell;
+    }
+
+    public Color getColor(){
+        return type.color;
+    }
+
+    public void putInYourPlace() {
+        cell.setPiece(this);
+    }
+
+
     public abstract Coordinate[] getNextMovements();
 
     @Override
@@ -22,7 +41,7 @@ public abstract class Piece {
     }
 
     public enum Color {
-        WHITE(Attribute.TEXT_COLOR(50)),
+        WHITE(Attribute.TEXT_COLOR(255)),
 
         BLACK(Attribute.TEXT_COLOR(0));
 
@@ -44,12 +63,12 @@ public abstract class Piece {
 
     public enum Type {
 
-        WHITE_KING("♔",Color.WHITE),
-        WHITE_QUEEN("♕",Color.WHITE),
-        WHITE_ROOK("♖",Color.WHITE),
-        WHITE_BISHOP("♗",Color.WHITE),
-        WHITE_KNIGHT("♘",Color.WHITE),
-        WHITE_PAWN("♙",Color.WHITE),
+        WHITE_KING("♚",Color.WHITE),
+        WHITE_QUEEN("♛",Color.WHITE),
+        WHITE_ROOK("♜",Color.WHITE),
+        WHITE_BISHOP("♝",Color.WHITE),
+        WHITE_KNIGHT("♞",Color.WHITE),
+        WHITE_PAWN("♟",Color.WHITE),
         BLACK_KING("♚",Color.BLACK),
         BLACK_QUEEN("♛",Color.BLACK),
         BLACK_ROOK("♜",Color.BLACK),
